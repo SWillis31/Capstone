@@ -32,7 +32,7 @@ body{
 }
 
 
-#content{
+.main_container{
     flex-basis: 75%;
     text-align: center;
     border: 1px solid black;
@@ -63,4 +63,8 @@ textarea{
     border: 1px solid black;
     margin: auto;
     text-align: right;
+}
+
+.hidden_id{
+    visibility: hidden;
 }

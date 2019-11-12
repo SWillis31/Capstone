@@ -1,12 +1,5 @@
 <?php
 
-
-// if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-//     //header("location: welcome.php");
-//     echo "You are already logged in";
-//     exit;
-// }
-
 include("db_connect.php");
 $conn = OpenDB();
 $username = $password = "";

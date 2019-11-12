@@ -24,17 +24,23 @@ include('header.php');
 
     ?>
 
-    <h2>Content</h2>
     <div>
-        <p>Insert article(s) here<p>
                 <?php
-                $sql = "SELECT poster, date, content, title FROM articles LIMIT 2";
-                $result = $conn->query($sql);
-                while ($row = $result->fetch_assoc()) {
-                    echo "Poster: " . "<h3>" . $row["poster"] . "</h3><br><h2>" . $row["title"] . "</h2><br>" . $row["content"] . "<br>";
-                }
+                    $sql = "SELECT poster, date, content, title FROM articles LIMIT 5";
+                    $result = $conn->query($sql);
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<h3>" . $row["title"] . "</h3><br>Posted by: " . $row["poster"] . "<br>On " . $row["date"] . "<br>";
+                        echo $row["content"];
+                    }
                 ?>
     </div>
+    <?php
+        if(isset($_SESSION["role"])){
+            if($_SESSION["role"] == "admin"){
+                echo "<a href='add_article.php'>Add Article</a>";
+            }
+        }
+    ?>
 </div>
 <div id="newsFeed">
     <h2>News Feed</h2>
