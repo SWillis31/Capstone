@@ -9,7 +9,6 @@ include("db_connect.php");
     function loadReplies(parent_id) {
         $("#child_reply_parent" + parent_id).load("load_replies.php?parent_id=" + parent_id, parent_id, function(responseText, status) {});
     };
-
 </script>
 
 <?php

@@ -29,7 +29,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <textarea name="article_content" id="editor" rows="10" cols="80"></textarea>
     <input type="submit" name="submit" value="SUBMIT">
 </form>
-
 <script>
 CKEDITOR.editorConfig = function( config ) {
   config.extraPlugins = 'imageuploader';
