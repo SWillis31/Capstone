@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 <!DOCTYPE html>
 <html class="no-js"> 
@@ -20,4 +21,4 @@ session_start();
             <a href="forum.php">Student Forum</a>
             <a href="https://www.google.com">Contact</a>
         </div>
-        <div id="main-container">
+        <div class="main_container">
