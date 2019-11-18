@@ -68,3 +68,7 @@ textarea{
 .hidden_id{
     visibility: hidden;
 }
+
+.add_resource_form{
+    display:none;
+}

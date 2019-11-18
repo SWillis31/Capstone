@@ -17,7 +17,7 @@ session_start();
             <a href="index.php">Home</a>
             <a href="https://www.google.com">Department News</a>
             <a href="https://www.google.com">Career Opportunities</a>
-            <a href="https://www.google.com">Student Resources</a>
+            <a href="resources.php">Student Resources</a>
             <a href="forum.php">Student Forum</a>
             <a href="https://www.google.com">Contact</a>
         </div>
