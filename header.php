@@ -16,7 +16,7 @@ session_start();
         <div id="navbar">
             <a href="index.php">Home</a>
             <a href="https://www.google.com">Department News</a>
-            <a href="https://www.google.com">Career Opportunities</a>
+            <a href="opportunities.php">Career Opportunities</a>
             <a href="resources.php">Student Resources</a>
             <a href="forum.php">Student Forum</a>
             <a href="https://www.google.com">Contact</a>

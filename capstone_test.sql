@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 04, 2019 at 07:56 AM
+-- Generation Time: Nov 19, 2019 at 04:53 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -72,6 +72,50 @@ INSERT INTO `forum_posts` (`reply_id`, `reply_content`, `reply_user`, `parent_id
 (4, 'qwer', 'newAdmin', 3, 2, '2019-10-23'),
 (5, 'comment level 2', 'testUser', 4, 2, '2019-10-14'),
 (6, 'separate comment', 'BKeltch', NULL, 2, '2019-10-31');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `opportunities`
+--
+
+DROP TABLE IF EXISTS `opportunities`;
+CREATE TABLE IF NOT EXISTS `opportunities` (
+  `opp_id` int(11) NOT NULL AUTO_INCREMENT,
+  `opp_title` varchar(255) NOT NULL,
+  `opp_description` text NOT NULL,
+  `opp_link` varchar(255) NOT NULL,
+  PRIMARY KEY (`opp_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `opportunities`
+--
+
+INSERT INTO `opportunities` (`opp_id`, `opp_title`, `opp_description`, `opp_link`) VALUES
+(1, 'Internship', 'Intern at this company.', 'https://www.google.com'),
+(4, 'Test', 'Go here to waste time', 'https://www.reddit.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `resources`
+--
+
+DROP TABLE IF EXISTS `resources`;
+CREATE TABLE IF NOT EXISTS `resources` (
+  `resource_id` int(11) NOT NULL AUTO_INCREMENT,
+  `resource_name` varchar(255) NOT NULL,
+  `resource_link` varchar(255) NOT NULL,
+  PRIMARY KEY (`resource_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `resources`
+--
+
+INSERT INTO `resources` (`resource_id`, `resource_name`, `resource_link`) VALUES
+(1, 'StackOverflow', 'https://www.stackoverflow.com');
 
 -- --------------------------------------------------------
 

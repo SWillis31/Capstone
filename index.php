@@ -20,9 +20,11 @@ $conn = OpenDB();
             while ($row = $result->fetch_assoc()) {
                 echo "<h3>" . $row["title"] . "</h3><br>Posted by: " . $row["poster"] . "<br>On " . $row["date"] . "<br>";
                 echo $row["content"];
-                echo " <br><a href='edit_article.php?id=" . $row["post_id"] . "'>Edit Article</a>";
+                if(isAdmin()){
+                    echo " <br><a href='edit_article.php?id=" . $row["post_id"] . "'>Edit Article</a>";
                 }
-            ?>
+            }
+        ?>
     </div>
     <?php
         if(isAdmin()){
