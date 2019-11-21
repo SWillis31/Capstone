@@ -68,3 +68,11 @@ textarea{
 .hidden_id{
     visibility: hidden;
 }
+
+.add_resource_form{
+    display:none;
+}
+
+.add_opp_form{
+    display:none;
+}

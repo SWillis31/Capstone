@@ -18,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $password = trim($_POST["password"]);
     }
-
     if (empty($username_err) && empty($password_err)) {
         $sql = "SELECT id, username, password, role FROM users WHERE username = ?";
 

@@ -9,10 +9,23 @@ include("db_connect.php");
     function loadReplies(parent_id) {
         $("#child_reply_parent" + parent_id).load("load_replies.php?parent_id=" + parent_id, parent_id, function(responseText, status) {});
     };
+
 </script>
 
 <?php
 $thread_id = $_GET["id"];
+$isAdmin = isAdmin();
+//Fetch thread content/message
+$sql = "SELECT * FROM threads WHERE thread_id = " . $thread_id;
+$result = $conn->query($sql);
+while($row = $result->fetch_assoc()){
+    echo "<div class='thread_content'>";
+    echo "<h3>" . $row["subject"] . "</h3><br>";
+    echo "<p class='thread_description'>" . $row["description"] . "<br>";
+    echo "Posted By: " . $row["posted_by"] . "<br>On " . $row["created"];
+}
+
+//Fetch all comments that are not a direct reply to another response
 $sql = "SELECT * FROM forum_posts WHERE thread_id = " . $thread_id . " AND parent_id IS NULL";
 $result = $conn->query($sql);
 while ($row = $result->fetch_assoc()) {
@@ -34,12 +47,19 @@ while ($row = $result->fetch_assoc()) {
         echo "Not logged in";
     }
     echo "<div class='forum_reply' id='child_reply_parent" . $row["reply_id"] . "'></div>";
+    if($isAdmin){
+        echo "<div class='admin_controls'>";
+        echo "<a href='delete_post.php?post_id=" . $row["reply_id"] . "'>Delete Post</a>";
+        echo "</div>";
+    }
     echo "</div>";
+
 }
 CloseConnection($conn);
 ?>
 
 <?php
+//Forum reply form
 echo "<div id='forum_form'>
 <form action='post_reply.php' method='POST'>
     <textarea placeholder='Reply here' name='reply_content'></textarea><br>
