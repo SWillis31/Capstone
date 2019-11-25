@@ -5,7 +5,7 @@ include('db_connect.php');
 include('header.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $insert = "INSERT INTO articles (poster, date, title, content) 
+    $insert = "INSERT INTO articles (poster, created, title, content) 
                 VALUES (?, NOW(), ?, ?)";
     if($statement = $conn->prepare($insert)){
         $statement->bind_param("sss", $poster, $post_title, $post_content);
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <form method="POST" action="add_article.php">
-    Article Title: <input type="text" name="article_title">
+    Article Title: <input type="text" name="article_title" required>
     <textarea name="article_content" id="editor" rows="10" cols="80"></textarea>
     <input type="submit" name="submit" value="SUBMIT">
 </form>
