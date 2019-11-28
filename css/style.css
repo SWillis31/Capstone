@@ -76,3 +76,7 @@ textarea{
 .add_opp_form{
     display:none;
 }
+
+.news_article{
+    border-bottom: 1px solid black;
+}
