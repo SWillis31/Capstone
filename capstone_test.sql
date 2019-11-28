@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 25, 2019 at 09:15 AM
+-- Generation Time: Nov 28, 2019 at 02:30 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -25,6 +25,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `announcements`
+--
+
+DROP TABLE IF EXISTS `announcements`;
+CREATE TABLE IF NOT EXISTS `announcements` (
+  `announcement_id` int(11) NOT NULL AUTO_INCREMENT,
+  `content` text NOT NULL,
+  `created` date NOT NULL,
+  `posted_by` varchar(255) NOT NULL,
+  PRIMARY KEY (`announcement_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `announcements`
+--
+
+INSERT INTO `announcements` (`announcement_id`, `content`, `created`, `posted_by`) VALUES
+(1, 'Test announcement', '2019-11-27', 'newAdmin');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `articles`
 --
 
@@ -36,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `content` mediumtext NOT NULL,
   `post_id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`post_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `articles`
@@ -156,7 +178,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `role` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
@@ -168,7 +190,8 @@ INSERT INTO `users` (`username`, `password`, `id`, `role`) VALUES
 ('newAdmin', '$2y$10$i9kWbU2lt0aQm8/FNOoknexte45T32aVDSh3w.vnCakKtutw6WTMO', 6, 'admin'),
 ('roleTest', '$2y$10$J6TZDJMMuYnHCFOcHoNMF.bSJzWJXF2yaroyHIKNh1rfoTvNPH0QK', 5, 'admin'),
 ('newUser', '$2y$10$G.04KI7AyjZynMO4ZJv5C.CjCjd2h99y.LyF/Qw47yut9NdF3hPzy', 8, 'user'),
-('testUser', '$2y$10$XQayvvA9EUwphjsr1YVvfOt1bYflp2xQ7j9G7brtkhq4IEXV0vEiq', 9, 'user');
+('testUser', '$2y$10$XQayvvA9EUwphjsr1YVvfOt1bYflp2xQ7j9G7brtkhq4IEXV0vEiq', 9, 'user'),
+('adminrequest', '$2y$10$iv4tMkmSKVVdya.nYndT6OxiEGFZLr14CxsPNSG1oSjm0JBnF9P5a', 18, 'admin');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

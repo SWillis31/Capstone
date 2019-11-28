@@ -10,6 +10,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
         echo $row["content"];
         if(isAdmin()){
             echo " <br><a href='edit_article.php?id=" . $row["post_id"] . "'>Edit Article</a>";
+            echo "<br><a href='delete_article.php?id=" . $row["post_id"] . "'>Delete Article</a>";
         }
     }
 }

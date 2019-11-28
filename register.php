@@ -55,8 +55,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //Check for errors
     if (empty($confirmPass_error) && empty($password_error) && empty($username_error)) {
 
-        //Prepare MYSQL insert statement
+        
+        if($_POST["role"] == 'admin'){
+            $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+            $headers .= 'From: Easy-Web@ualr.edu' . "\r\n";
+            $to = 'sxwillis@ualr.edu';
+            $subject = 'Easy Web Admin Access';
+            $message = "
+                <html>
+                    <head>
+                        <title>Admin Access Request</title>
+                    </head>
+                <body>
+                    <p>User " . $username . " has requested access to the Easy Web System.</p>
+                    <br><a href='localhost/capstone/add_admin.php?username=" . $username . "'>Approve Access</a><br>
+                    <a href='localhost/capstone/deny_admin.php?username=" . $username . "'>Deny Access</a><br>
+                </body>
+                </html>
+            ";//Links will need to be changed to the final server address
 
+            mail($to, $subject, $message, $headers);
+        }
+        
+        //Prepare MYSQL insert statement
+        
         $sql = "INSERT INTO users (username, password, role) VALUES (?, ?, ?)";
 
         if ($statement = $conn->prepare($sql)) {
@@ -64,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $param_username = $username;
             $param_password = password_hash($password, PASSWORD_DEFAULT);
-            $param_role = $role;
+            $param_role = "user";
 
             if ($statement->execute()) {
                 header("location: login.php");
@@ -102,12 +124,11 @@ include('header.php');
         <span class="help-block"><?php echo $confirmPass_error; ?></span>
     </div>
     <div class="form-group">
-        <label>Admin</label>
+        <label>Select your status (Admin selections must be approved by a member of the staff)</label>
         <select name="role">
-            <option value="admin">Admin</option>
             <option value="user">User</option>
+            <option value="admin">Admin</option>
         </select>
-        <p>This option will not be available in the finished product, it is only here to test admin-istrator privileges</p><br>
     </div>
     <div class="form-group">
         <input type="submit" class="btn btn-primary" value="Submit">
