@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         //Prepare MYSQL insert statement
-
+        
         $sql = "INSERT INTO users (username, password, role) VALUES (?, ?, ?)";
 
         if ($statement = $conn->prepare($sql)) {

@@ -11,3 +11,8 @@
 
 ## View Website
 - Go to localhost/Capstone to view the website (using Chrome)
+
+## Email Functionality
+- Follow the instructions here https://stackoverflow.com/a/24339890
+- auth_username = systemtron.auto@gmail.com
+- auth_password = SystemTron123
