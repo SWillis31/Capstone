@@ -13,12 +13,12 @@ session_start();
         <script src="main.js"></script>
     </head>
     <body>
-        <div id="navbar">
+        <!-- <div id="navbar">
             <a href="index.php">Home</a>
-            <a href="https://www.google.com">Department News</a>
-            <a href="https://www.google.com">Career Opportunities</a>
+            <a href="news.php">Department News</a>
+            <a href="opportunities.php">Student Opportunities</a>
             <a href="resources.php">Student Resources</a>
             <a href="forum.php">Student Forum</a>
-            <a href="https://www.google.com">Contact</a>
-        </div>
+            <a href="contact.php">Contact</a>
+        </div> -->
         <div class="main_container">

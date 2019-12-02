@@ -8,7 +8,7 @@ $sql = "SELECT * FROM resources";
 
 $result = $conn->query($sql);
 while($row = $result->fetch_assoc()){
-    echo "<a href='" . $row["resource_link"] . "' class='resource-link'>" . $row["resource_name"] . "</a>";
+    echo "<li><a href='" . $row["resource_link"] . "' class='resource-link'>" . $row["resource_name"] . "</a></li>";
     if(isAdmin()){
         echo "<div class='admin_control'>";
         echo "<a href='remove_resource.php?id=" . $row["resource_id"] . "'>Delete Resource</a>"; 

@@ -1,10 +1,13 @@
-html{
-    margin-left: 3%;
-    margin-right: 3%;
+ html{
+    width:80%;
+    /* margin-left: 3%;
+    margin-right: 3%; */
+    margin:auto;
 }
 
 body{
-    background-color: darkgrey;
+    width:100%;
+    background-color: gray;
 }
 
 #navbar{
@@ -32,24 +35,24 @@ body{
 }
 
 
-.main_container{
+/* .main_container{
     flex-basis: 75%;
     text-align: center;
     border: 1px solid black;
-}
+} */
 
-
+/* 
 #newsFeed{
     flex-basis: 25%;
     text-align:center;
     border: 1px solid black;
-}
+} */
 footer{
     align-content: center;
 }
 
 .forum_post{
-    border: 1px solid black;
+    border: 1px solid red;
     margin-top: 25px;
 }
 
@@ -60,7 +63,7 @@ textarea{
 }
 
 .forum_reply{
-    border: 1px solid black;
+    border: 1px solid green;
     margin: auto;
     text-align: right;
 }
@@ -71,4 +74,20 @@ textarea{
 
 .add_resource_form{
     display:none;
+}
+
+/* .add_opp_form{
+    display:none;
+} */
+
+.news_article{
+    border-bottom: 1px solid blue;
+}
+
+.hidden_contact_form{
+    visibility: hidden;
+}
+
+.admin_control{
+    background-color: lightblue;
 }

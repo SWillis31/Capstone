@@ -4,7 +4,7 @@
     {
         $dbhost = "localhost";
         $dbuser = "root";
-        $dbpass = "";
+        $dbpass = "SystemTron";
         $db = "capstone_test";
 
         global $conn;
@@ -29,4 +29,5 @@
             }
         }
     }
+
 ?>

@@ -1,14 +1,13 @@
 <?php
 include("db_connect.php");
 session_start();
-if (!isAdmin()) {
-    header("location: access_denied.php");
-} else {
+
+if(isAdmin()){
     if($_SERVER["REQUEST_METHOD"] == "GET"){
         
-        $resource_id = $_GET["id"];
+        $opp_id = $_GET["id"];
 
-        $sql = "DELETE FROM resources WHERE resource_id = " . $resource_id;
+        $sql = "DELETE FROM opportunities WHERE opp_id = " . $opp_id;
         if($conn->query($sql) === TRUE){
             echo "Successfully deleted";
         }
