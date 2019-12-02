@@ -2,6 +2,8 @@
 
 include("db_connect.php");
 $conn = OpenDB();
+$title="Forum";
+$extra_stylesheet="";
 
 include('header.php');
 ?>

@@ -1,5 +1,7 @@
 <?php
 include("db_connect.php");
+$title="Add Opportunities";
+$extra_stylesheet="";
 include("header.php");
 
 ?>

@@ -1,5 +1,7 @@
 <?php
 include("header.php");
+$title="Article";
+$extra_stylesheet="";
 include("db_connect.php");
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){

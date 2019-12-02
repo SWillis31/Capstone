@@ -2,6 +2,8 @@
 
 <?php
 include("db_connect.php");
+$title="Edit Opportunities";
+$extra_stylesheet="";
 include("header.php");
 if ($_SESSION["role"] !== 'admin') {
     header("location: access_denied.php");

@@ -1,5 +1,7 @@
 <?php
 include("header.php");
+$title="Announcement";
+$extra_stylesheet="";
 include("db_connect.php");
 
 echo "<div class='announcements'>";

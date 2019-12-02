@@ -1,5 +1,7 @@
 <?php
 include("db_connect.php");
+$title="Unanswered Questions";
+$extra_stylesheet="";
 include('header.php');
 
 if (!isAdmin()) {

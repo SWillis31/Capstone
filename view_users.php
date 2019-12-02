@@ -1,5 +1,7 @@
 <?php
 include("header.php");
+$title="Users";
+$extra_stylesheet="";
 include("db_connect.php");
 
 if (!isAdmin()) {

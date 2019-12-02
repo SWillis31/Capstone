@@ -1,5 +1,7 @@
 <?php
 include("db_connect.php");
+$title="Opportunities";
+$extra_stylesheet="";
 include("header.php");
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){

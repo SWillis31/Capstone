@@ -1,5 +1,7 @@
 <?php
 include("db_connect.php");
+$title="FAQs";
+$extra_stylesheet="";
 include("header.php");
 
 $sql = "SELECT * FROM about_info WHERE title='faq'";

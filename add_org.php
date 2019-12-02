@@ -2,6 +2,8 @@
 
 <?php
 include('db_connect.php');
+$title="Add Organizations";
+$extra_stylesheet="";
 include('header.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

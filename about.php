@@ -1,7 +1,11 @@
 <?php
 include("db_connect.php");
+$title="About";
+$extra_stylesheet="css/about.css";
 include("header.php");
+?>
 
+<?php
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $sql = "SELECT * FROM about_info WHERE title='" . $_GET["title"] . "'";
     $result = $conn->query($sql);
@@ -17,3 +21,4 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 }
 }
 include("footer.php");
+?>

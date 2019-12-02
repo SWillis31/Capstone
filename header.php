@@ -6,11 +6,11 @@ session_start();
 <html class="no-js"> 
     <head>
         <meta charset="utf-8">
-        <title>Capstone Project</title>
+        <title><?php echo $title;?></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/style.css">
-        <script src="main.js"></script>
+		<link rel="stylesheet" href="<?php echo $extra_stylesheet;?>">
     </head>
     <body>
         <!-- <div id="navbar">

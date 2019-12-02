@@ -7,9 +7,9 @@
 
 body{
     width:100%;
-    background-color: lightgrey;
+    background-color: #fff;
 }
-
+/*
 #navbar{
     background-color:maroon;
     display: flex;
@@ -33,7 +33,7 @@ body{
     border-right: 1px solid yellow;
     border-left: 1px solid yellow;
 }
-
+*/
 
 /* .main_container{
     flex-basis: 75%;
