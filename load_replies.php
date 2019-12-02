@@ -25,9 +25,6 @@ if($request != ""){
             echo "<a href='delete_post.php?post_id=" . $row["reply_id"] . "'>Delete Post</a>";
             echo "</div>";
         }
-        else{
-            echo "Not logged in";
-        }
         echo "<div class='forum_reply' id='child_reply_parent" . $row["reply_id"] . "'></div>";
 
     }

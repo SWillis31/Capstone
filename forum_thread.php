@@ -42,9 +42,7 @@ while ($row = $result->fetch_assoc()) {
                 <input class='hidden_id' name='thread_id' type='number' value='" . $row["thread_id"] . "' />
             </form>
             </div>";
-    }}
-    else{
-        echo "Not logged in";
+        }
     }
     echo "<div class='forum_reply' id='child_reply_parent" . $row["reply_id"] . "'></div>";
     if($isAdmin){

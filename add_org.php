@@ -5,13 +5,12 @@ include('db_connect.php');
 include('header.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $insert = "INSERT INTO articles (poster, created, title, content) 
-                VALUES (?, NOW(), ?, ?)";
+    $insert = "INSERT INTO student_orgs (org_name, org_description) 
+                VALUES (?, ?)";
     if($statement = $conn->prepare($insert)){
-        $statement->bind_param("sss", $poster, $post_title, $post_content);
-        $poster = $_SESSION["username"];
-        $post_title = $_POST["article_title"];
-        $post_content = $_POST["article_content"];
+        $statement->bind_param("ss", $name, $description);
+        $name = $_POST["name"];
+        $description = $_POST["description"];
 
         if($statement->execute()){
             echo "article posted";
@@ -24,9 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 
-<form method="POST" action="add_article.php">
-    Article Title: <input type="text" name="article_title" required>
-    <textarea name="article_content" id="editor" rows="10" cols="80"></textarea>
+<form method="POST" action="add_org.php">
+    Organization Name: <input type="text" name="name" required>
+    <textarea name="description" id="editor" rows="10" cols="80"></textarea>
     <input type="submit" name="submit" value="SUBMIT">
 </form>
 
