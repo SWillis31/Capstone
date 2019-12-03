@@ -1,5 +1,7 @@
 <?php
 include("header.php");
+$title="Contact";
+$extra_stylesheet="css/main_content.css";
 include("db_connect.php");
 ?>
 <script>

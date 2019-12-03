@@ -1,5 +1,7 @@
 <?php
 include("header.php");
+$title="News";
+$extra_stylesheet="css/main_content.css";
 include("db_connect.php");
 
 echo "<div class='news-articles'>";

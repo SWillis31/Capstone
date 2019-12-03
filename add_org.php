@@ -2,6 +2,8 @@
 
 <?php
 include('db_connect.php');
+$title="Add Organizations";
+$extra_stylesheet="css/main_content.css";
 include('header.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -36,7 +38,6 @@ CKEDITOR.editorConfig = function( config ) {
 CKEDITOR.replace('editor');
 </script>
 
-<p>test</p>
 <?php 
 include('footer.php');
 ?>

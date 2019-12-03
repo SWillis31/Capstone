@@ -2,6 +2,8 @@
 
 <?php
 include("db_connect.php");
+$title="Edit Article";
+$extra_stylesheet="css/main_content.css";
 include("header.php");
 if (!isAdmin()) {
     header("location: access_denied.php");

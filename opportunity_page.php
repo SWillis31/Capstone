@@ -1,5 +1,7 @@
 <?php
 include("db_connect.php");
+$title="Opportunities";
+$extra_stylesheet="css/main_content.css";
 include("header.php");
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){
@@ -7,7 +9,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
 
     $result = $conn->query($sql);
     while($row = $result->fetch_assoc()){
-        echo "<h2>" . $row["opp_title"] . "</h2>";
+        echo "<h1>" . $row["opp_title"] . "</h1>";
         echo $row["opp_description"];
     }
 

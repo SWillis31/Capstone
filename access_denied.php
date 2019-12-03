@@ -1,5 +1,7 @@
 <?php
 include("header.php");
+$title="Access Denied";
+$extra_stylesheet="css/main_content.css";
 
 ?>
 

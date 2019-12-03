@@ -53,10 +53,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $conn->close();
 }
+$title="Login";
+$extra_stylesheet="css/main_content.css";
 include('header.php');
 ?>
 
-<h2>Login</h2>
+<h1>Login</h1>
 <p>Please enter your username and password</p>
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
     <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">

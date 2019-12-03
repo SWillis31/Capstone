@@ -2,9 +2,11 @@
 $title = "UALR Computer Science";
 include('header.php');
 include('db_connect.php');
+$title="Capstone";
+$extra_stylesheet="css/index.css";
+include('header.php');
 ?>
 
-<link rel='stylesheet' href='css/index.css'>
 <script>
     function openForm(form_name){
         document.getElementById(form_name).style.display = 'block';

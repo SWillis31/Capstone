@@ -2,6 +2,8 @@
 
 <?php
 include('db_connect.php');
+$title="Create Announcement";
+$extra_stylesheet="css/main_content.css";
 include('header.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
