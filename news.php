@@ -17,9 +17,10 @@ while($row = $result->fetch_assoc()){
         echo "<div class='admin_control'>";
         echo " <br><a href='edit_article.php?id=" . $row["post_id"] . "'>Edit Article</a>";
         echo "<br><a href='delete_article.php?id=" . $row["post_id"] . "'>Delete Article</a></div>";
-        echo "</div>";
     }
+    echo "</div>";
 }
+
 
 if(isAdmin()){
     echo "<div class='admin_control'>";
