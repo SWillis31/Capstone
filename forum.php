@@ -49,13 +49,24 @@ if (isset($_SESSION["loggedin"])) {
         echo "<a href=forum_thread.php?id=" . $row["thread_id"] . ">View thread</a>";
         echo "</div>";
     }
-    
+    if(isset($_SESSION["loggedin"])){
+        if($_SESSION["loggedin"] == true){
+    echo "
+    <div id='forum_form'>
+        <form action='forum.php' method='post'>
+            <input type='text' name='post_title' placeholder='title'/><br><br>
+            <textarea placeholder='New Post...' name='post_content'></textarea><br>
+            <input type='submit' name='submit' value='Create Thread'/>
+        </form>
+    </div>";
+        }}
+        echo "</div>";
 ?>
 
 
 
 <?php
-echo "</div>";
+
 echo "<div class='quick_links'>";
     echo "<h2>Quick Links</h2>";
     echo "<ul><li><a href='index.php'>Home</a></li>";
@@ -64,18 +75,6 @@ echo "<div class='quick_links'>";
     echo "<li><a href='forum.php'>Forum</a></li>";
     echo "<li><a href='contact.php'>Contact</a></li>";
     echo "<li><a href='opportunities.php'>Opportunities</a></li>";
-    if(isset($_SESSION["loggedin"])){
-        if($_SESSION["loggedin"] == true){
-    echo "
-    <div id='forum_form'>
-        <form action='forum.php' method='post'>
-            <input type='text' name='post_title' placeholder='title'/><br><br>
-            <textarea placeholder='Reply here' name='post_content'></textarea><br>
-            <input type='submit' name='submit' value='Create Thread'/>
-        </form>
-    </div>";
-        }}
-        echo "</div>";
-    echo "</div></div>";
+    echo "</div>";
 include('footer.php');
 ?>
