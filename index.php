@@ -1,4 +1,5 @@
 <?php
+$title = "UALR Computer Science";
 include('header.php');
 include('db_connect.php');
 ?>
@@ -16,14 +17,15 @@ include('db_connect.php');
 
 
 <?php
+
+echo "<div class='column' id='secondary'>";
 if (isset($_SESSION["loggedin"])) {
     echo "<a href='logout.php'>Log Out</a>";
 } else {
     echo "<a href='login.php'>Log in</a><br><a href='register.php'>Register</a>";
 }
-echo "<div class='column'>";
 echo "<div class='about_widget widget'>";
-echo "<h3>About</h3>";
+echo "<h2>About</h2>";
 $sql = "SELECT * FROM about_info";
 $result = $conn->query($sql);
 echo "<ul>";
@@ -39,17 +41,12 @@ echo "</ul>";
 if(isAdmin()){
     echo "<a href='add_about.php'>Add About Item</a>";
 }
-// echo "<ul>
-//         <li><a href='about.php'>About</a></li>
-//         <li><a href='faq.php'>FAQ's</a></li>
-//         <li><a href='programs.php'>Programs</a></li>
-//         </ul>";
 
 
 echo "</div>";
 echo "<div class='opportunity_widget widget'>";
 
-echo "<h3>Opportunities for Students</h3><ul>";
+echo "<h2>Opportunities for Students</h2><ul>";
 $sql = "SELECT * FROM opportunities";
 $result = $conn->query($sql);
 
@@ -76,12 +73,14 @@ while ($row = $result->fetch_assoc()) {
         echo "</div>";
     }
 }
-echo "<a href='add_org.php'>Add Student Organization</a>";
+if(isAdmin()){
+    echo "<div class='admin_control'><a href='add_org.php'>Add Student Organization</a></div>";
+}
 
 echo "</div>";
 
 echo "<div class='resources_widget widget'>";
-echo "<h3>Helpful Resources</h3>";
+echo "<h2>Helpful Resources</h2>";
 echo "<ul>";
 
 $sql = "SELECT * FROM resources";
@@ -119,13 +118,13 @@ echo "</div>";
 
 echo "</div>"; //column
 
-echo "<div class='column'>";
+echo "<div class='column' id='primary'>";
 echo "<div class='announcement_widget widget'>";
-echo "<h3>Announcements</h3>";
+echo "<h2>Announcements</h2>";
 $sql = "SELECT * FROM announcements ORDER BY created DESC LIMIT 3";
 $result = $conn->query($sql);
 while ($row = $result->fetch_assoc()) {
-    echo "<div class='announcement_item'><h4>" . $row["announcement_title"] . "</h4>" . $row["content"] . "<br>Posted by: " . $row["posted_by"] . "<br>On " . $row["created"] . "</div>";
+    echo "<div class='announcement_item'><h3>" . $row["announcement_title"] . "</h3>" . $row["content"] . "<br>Posted by: " . $row["posted_by"] . "<br>On " . $row["created"] . "</div>";
 }
 if(isAdmin()){
     echo "<div class='admin_control'>";
@@ -135,7 +134,7 @@ if(isAdmin()){
 echo "<a href='announcements.php'>View All Announcements</a>";
 echo "</div>";
 echo "<div class='news_widget widget'>";
-echo "<h3>Department News</h3>";
+echo "<h2>Department News</h2>";
 $sql = "SELECT * FROM articles WHERE post_id != 13 ORDER BY created DESC LIMIT 5";
 $result = $conn->query($sql);
 while ($row = $result->fetch_assoc()) {
@@ -157,12 +156,12 @@ echo "</div>";
 echo "<div class='calendar_contact_group'>";
 echo "<div class='calendar_widget widget'>";
 ?>
-<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FChicago&amp;src=c2FtdHVycmV0MzFAZ21haWwuY29t&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%233366CC&amp;color=%23329262&amp;color=%231F753C&amp;showPrint=0&amp;showTabs=0" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FChicago&amp;src=c2FtdHVycmV0MzFAZ21haWwuY29t&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%233366CC&amp;color=%23329262&amp;color=%231F753C&amp;showPrint=0&amp;showTabs=0" style="border-width:0" frameborder="0" scrolling="no"></iframe>
 <!-- echo "<iframe src='https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FChicago&amp;src=c2FtdHVycmV0MzFAZ21haWwuY29t&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%233366CC&amp;color=%23329262&amp;color=%231F753C' style='border:solid 1px #777' width='100%' height='100%' frameborder='0' scrolling='no'></iframe>"; -->
 <?php
 echo "</div>";
 echo "<div class='contact_widget widget'>";
-echo "<h3>Contact</h3>";
+echo "<h2>Contact</h2>";
 $sql = "SELECT * FROM contact_info";
 $result = $conn->query($sql);
 $isAdmin = isAdmin();
@@ -207,11 +206,13 @@ if ($isAdmin) {
 
 echo "</div></div>";
 echo "</div>"; //column
+
+// include('footer.php');
+echo "</div>";
 if(isAdmin()){
     echo "<div class='admin_controls'>";
     echo "<a href='view_questions.php'>View Questions</a><br>";
     echo "<a href='view_users.php'>View Users</a>";
     echo "</div>";
 }
-include('footer.php');
 ?>
