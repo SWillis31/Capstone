@@ -1,5 +1,5 @@
 <?php
-include("db_connect.php");
+
 $title="Unanswered Questions";
 $extra_stylesheet="css/main_content.css";
 include('header.php');

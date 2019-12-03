@@ -1,15 +1,15 @@
 <?php
-
-include("db_connect.php");
-$conn = OpenDB();
 $title="Forum";
-$extra_stylesheet="css/main_content.css";
+$extra_stylesheet="css/news.css";
 
 include('header.php');
+
+$conn = OpenDB();
+
 ?>
 
 <h1>Forums</h1><br>
-<div id="forum-container">
+<div id="forum-container" class='wrapper'>
 <?php
 if (isset($_SESSION["loggedin"])) {
     if ($_SESSION["loggedin"] === false) {
@@ -39,32 +39,43 @@ if (isset($_SESSION["loggedin"])) {
 ?>
 
 <?php
+    echo "<div class='news-articles'>";
     $sql = "SELECT * FROM threads";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
         echo "<div class='forum_post'>";
-        echo "Posted by: " . $row["posted_by"] . "<p>" . $row["subject"] . "</p>" . $row["description"] . "<br>";
+        echo "<h2>" . $row["subject"] . "</h2>" . $row["description"] . "<br>Posted by: " . $row["posted_by"] . "<br>";
         echo "Posted on: " . $row["created"] . "<br>";
         echo "<a href=forum_thread.php?id=" . $row["thread_id"] . ">View thread</a>";
         echo "</div>";
     }
+    
 ?>
 
-<?php
-if(isset($_SESSION["loggedin"])){
-    if($_SESSION["loggedin"] == true){
-?>
-<div id="forum_form">
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
-        <input type="text" name="post_title" placeholder="title"/><br><br>
-        <textarea placeholder="Reply here" name="post_content"></textarea><br>
-        <input type="submit" name="submit" value="Create Thread"/>
-    </form>
-</div>
 
-<?php }}?>
 
-</div><!--forum-container-->
 <?php
+echo "</div>";
+echo "<div class='quick_links'>";
+    echo "<h2>Quick Links</h2>";
+    echo "<ul><li><a href='index.php'>Home</a></li>";
+    echo "<li><a href='News'>News</a></li>";
+    echo "<li><a href='announcements.php'>Announcements</a></li>";
+    echo "<li><a href='forum.php'>Forum</a></li>";
+    echo "<li><a href='contact.php'>Contact</a></li>";
+    echo "<li><a href='opportunities.php'>Opportunities</a></li>";
+    if(isset($_SESSION["loggedin"])){
+        if($_SESSION["loggedin"] == true){
+    echo "
+    <div id='forum_form'>
+        <form action='forum.php' method='post'>
+            <input type='text' name='post_title' placeholder='title'/><br><br>
+            <textarea placeholder='Reply here' name='post_content'></textarea><br>
+            <input type='submit' name='submit' value='Create Thread'/>
+        </form>
+    </div>";
+        }}
+        echo "</div>";
+    echo "</div></div>";
 include('footer.php');
 ?>

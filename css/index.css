@@ -10,13 +10,24 @@
     margin-top:0;
 }
 
+.welcome_message p{
+    font-weight:bold;
+    font-size: 1.5em;
+}
+
+.welcome_message h3{
+    font-size:2em;
+    color: maroon;
+}
+
 .widget h2{
+    border-radius:25px 25px 0px 0px;
     margin-top:0;
     background-color:maroon;
     color:white;
 }
 
-.widget h3{
+.widget h3{ 
     color:maroon;
     font-weight: bold;
     text-decoration:none;
@@ -42,7 +53,9 @@
 }
 
 .widget{
+    border-radius:25px;
     border: 1px solid black;
+    background-color:white;
 }
 
 ul{
@@ -56,16 +69,35 @@ li{
     display:flex;
     flex-direction:row;
     justify-content:space-evenly;
+    
+    
+}
+
+#event_header{
+    margin-bottom:0;
 }
 
 .calendar_contact_group .widget{
     flex-grow: 1;
+    overflow:hidden;
+}
+
+.contact_widget .admin_control{
+    height:fit-content;
 }
 iframe{
+    margin:0;
     height:100%;
     width:100%;;
 }
-
+@media only screen and (min-width:320px){
+    .widget{
+        margin-bottom:1em;
+    }
+    .calendar_contact_group{
+        flex-direction:column;
+    }
+}
 
 @media only screen and (min-width: 1024px){
     .main_container{
@@ -80,7 +112,7 @@ iframe{
         margin:auto;
     }
     #primary{
-        flex-grow:2;
+        flex-grow:10;
     }
 
     #secondary{

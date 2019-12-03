@@ -1,6 +1,8 @@
 <?php
+$title = "Register";
+$extra_stylesheet = "css/main_content.css";
+include('header.php');
 
-include("db_connect.php");
 $conn = OpenDB();
 $username = $password = $confirmPassword = $role = "";
 $username_error = $password_error = $confirmPass_error = "";
@@ -124,7 +126,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 }
 
-include('header.php');
+
 ?>
 
 <h2>Sign Up</h2>

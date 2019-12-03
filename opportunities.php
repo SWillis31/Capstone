@@ -1,22 +1,23 @@
 <?php
-include("db_connect.php");
+
 $title="Opportunities";
-$extra_stylesheet="css/main_content.css";
+$extra_stylesheet="css/news.css";
 include("header.php");
 
-echo "<div class='opportunity-list'>";
+echo "<div class='wrapper'><div class='opportunity-list news-articles'>";
 $sql = "SELECT * FROM opportunities";
 $result = $conn->query($sql);
 while($row = $result->fetch_assoc()){
-    echo "<h1>" . $row["opp_title"] . "</h1>";
+    echo "<div class='opp_item'><h1 class='page_heading'>" . $row["opp_title"] . "</h1>";
     echo "<p>" . $row["opp_description"] . "</p>";
     if(isAdmin()){
         echo "<div class='admin_control'>";
         echo "<a href='remove_opp.php?id=" . $row["opp_id"] . "'>Delete Opportunity</a>"; 
         echo "</div>";
     }
+    echo "</div>";
 }
-echo "</div>";
+
 ?>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 <script src="//cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
@@ -50,7 +51,16 @@ if(isAdmin()){
     ";
 
 }
-
+echo "</div>";
+echo "<div class='quick_links'>";
+    echo "<h2>Quick Links</h2>";
+    echo "<ul><li><a href='index.php'>Home</a></li>";
+    echo "<li><a href='News'>News</a></li>";
+    echo "<li><a href='announcements.php'>Announcements</a></li>";
+    echo "<li><a href='forum.php'>Forum</a></li>";
+    echo "<li><a href='contact.php'>Contact</a></li>";
+    echo "<li><a href='opportunities.php'>Opportunities</a></li>";
+    echo "</div>";
 include("footer.php");
 ?>
 

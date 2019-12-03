@@ -1,7 +1,6 @@
 <script src="//cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
 
 <?php
-include('db_connect.php');
 $title="Create Announcement";
 $extra_stylesheet="css/main_content.css";
 include('header.php');

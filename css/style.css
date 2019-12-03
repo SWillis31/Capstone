@@ -7,46 +7,15 @@
 
 body{
     width:100%;
-    background-color: #fff
+    background-color:#EDE4C6;
 }
-/*
-#navbar{
-    background-color:maroon;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+a{
+    color:black;
 }
-
-#navbar a{
-    color:silver;
-    font-size: 1.75em;
-    text-decoration: none;
-    font-variant: small-caps;
-    font-family: "Lucida Console", Monaco, monospace;
-    padding-left: 2%;
-    padding-right: 2%;
-    margin: 0px;
-    text-align:center;
+a:visited{
+    color:maroon;
 }
 
-#navbar a:nth-child(odd){
-    border-right: 1px solid yellow;
-    border-left: 1px solid yellow;
-}
-*/
-
-/* .main_container{
-    flex-basis: 75%;
-    text-align: center;
-    border: 1px solid black;
-} */
-
-/* 
-#newsFeed{
-    flex-basis: 25%;
-    text-align:center;
-    border: 1px solid black;
-} */
 footer{
     align-content: center;
 }
@@ -90,4 +59,33 @@ textarea{
 
 .admin_control{
     background-color: lightblue;
+    margin:auto;
+}
+@media only screen and (min-width:320px){
+    #banner{
+        text-align:center;
+        width: 100%;
+        margin-bottom: 1em;
+        background-color:maroon;
+        color:white;
+    }
+    
+    .banner_text{
+        
+        font-weight:bold;
+        font-size:2em;
+    }
+}
+
+@media only screen and (min-width:1024px){
+    
+    #banner{
+        text-align:left;
+    }
+
+    .banner_text{
+        margin-left:3%;
+        font-weight:bold;
+        font-size:5em;
+    }
 }

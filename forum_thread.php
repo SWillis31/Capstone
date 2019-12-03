@@ -1,8 +1,8 @@
 <?php
-include("header.php");
+
 $title="Forum";
-$extra_stylesheet="css/main_content.css";
-include("db_connect.php");
+$extra_stylesheet="css/news.css";
+include("header.php");
 ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -22,18 +22,18 @@ $sql = "SELECT * FROM threads WHERE thread_id = " . $thread_id;
 $result = $conn->query($sql);
 while($row = $result->fetch_assoc()){
     echo "<div class='thread_content'>";
-    echo "<h3>" . $row["subject"] . "</h3><br>";
-    echo "<p class='thread_description'>" . $row["description"] . "<br>";
+    echo "<h1>" . $row["subject"] . "</h1><br>";
+    echo "<p class='thread_description'>" . $row["description"] . "</p><br>";
     echo "Posted By: " . $row["posted_by"] . "<br>On " . $row["created"];
 }
 
 //Fetch all comments that are not a direct reply to another response
 $sql = "SELECT * FROM forum_posts WHERE thread_id = " . $thread_id . " AND parent_id IS NULL";
 $result = $conn->query($sql);
-while ($row = $result->fetch_assoc()) {
+while ($row = $result->fetch_assoc()) { 
     echo "<div class='forum_post'>";
     echo "Posted By: " . $row["reply_user"] . "<br><p>" . $row["reply_content"] . "</p><br>";
-    echo "<a href='#' onclick='loadReplies(\"" . $row["reply_id"] . "\")'>Load Replies</a>";
+    echo "<a href='#here' onclick='loadReplies(\"" . $row["reply_id"] . "\")'>Load Replies</a>";
     if(isset($_SESSION["loggedin"])){
         if($_SESSION["loggedin"] == true){
             echo "<div id='forum_form'>

@@ -1,6 +1,8 @@
 <?php
+$title="Login";
+$extra_stylesheet="css/news.css";
+include('header.php');
 
-include("db_connect.php");
 $conn = OpenDB();
 $username = $password = "";
 $username_err = $password_err = "";
@@ -39,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;
                             $_SESSION["role"] = $role;
-                            header("location: welcome.php");
+                            header("location: index.php");
                         } else {
                             $password_err = "Invalid password";
                         }
@@ -53,9 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $conn->close();
 }
-$title="Login";
-$extra_stylesheet="css/main_content.css";
-include('header.php');
+
 ?>
 
 <h1>Login</h1>

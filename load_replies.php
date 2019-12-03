@@ -8,7 +8,7 @@ if($request != ""){
     $result = $conn->query($sql);
     while($row = $result->fetch_assoc()){
         echo "<div id='child_reply'>" . $row["reply_content"] . "<br><p>Posted By: " . $row["reply_user"] . " on " . $row["created"] . "<br>";
-        echo "<a href='#' onclick='loadReplies(\"" . $row["reply_id"] . "\")'>Load Replies</a>";
+        echo "<a href='#here' onclick='loadReplies(\"" . $row["reply_id"] . "\")'>Load Replies</a>";
         if(isset($_SESSION["loggedin"])){
             if($_SESSION["loggedin"] == true){
                 echo "<div id='forum_form'>

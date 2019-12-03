@@ -1,7 +1,7 @@
 <?php
-include("db_connect.php");
+
 $title="Student Organization";
-$extra_stylesheet="css/main_content.css";
+$extra_stylesheet="css/news.css";
 include("header.php");
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){
@@ -9,7 +9,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
 
     $result = $conn->query($sql);
     while($row = $result->fetch_assoc()){
-        echo "<h1>" . $row["org_name"] . "</h1>";
+        echo "<h1 class='page_heading'>" . $row["org_name"] . "</h1>";
         echo $row["org_description"];
     }
 

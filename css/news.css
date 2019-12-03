@@ -1,0 +1,70 @@
+.main_container{
+    text-align:center;
+}
+
+h1{
+    color:white;
+    background-color:maroon;
+    text-align:center;
+}
+
+.quick_links h2{
+	background-color:maroon;
+    color:white!important;
+    margin-top:0;
+}
+
+.quick_links{
+    flex-grow:1;
+    float:right;
+	background-color:white;
+	border:1px solid black;
+	height:fit-content;
+}
+
+.quick_links ul{
+	list-style:none;
+	padding:0;
+	
+}
+
+.news-articles{
+	text-align:center;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+    flex-grow:10;
+    margin-right:3%;
+}
+
+.wrapper{
+    display:flex;
+    flex-direction:column;
+}
+
+.page_heading{
+    font-size:2.5em;
+    margin-top:0;
+}
+
+.thread_description{
+    font-size:1.25em;
+}
+
+.forum_post{
+    background-color:white;
+}
+
+textarea{
+    margin:0;
+}
+
+.forum_post h2{
+    color:maroon;
+}
+
+@media only screen and (min-width:1024px){
+    .wrapper{
+        flex-direction:row;
+    }
+}
