@@ -16,3 +16,8 @@
 - Follow the instructions here https://stackoverflow.com/a/24339890
 - auth_username = systemtron.auto@gmail.com
 - auth_password = SystemTron123
+- Edit the links in register.php lines 73 and 74 to the following:
+```
+<a href='localhost/capstone/add_admin.php?...
+<a href='localhost/capsotne/deny_admin.php?...
+```
