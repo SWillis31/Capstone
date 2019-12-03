@@ -4,7 +4,33 @@
     flex-direction: column;
     text-align:center;
     align-self:center;
+    flex-basis: content;
 }
+#secondary{
+    margin-top:0;
+}
+
+.widget h2{
+    margin-top:0;
+    background-color:maroon;
+    color:white;
+}
+
+.widget h3{
+    color:maroon;
+    font-weight: bold;
+    text-decoration:none;
+}
+.widget h3 a {
+    color:maroon;
+    font-weight: bold;
+    text-decoration:none;
+}
+.widget h3 a:visited{
+    color:white;
+    text-decoration: none;
+}
+
 
 .main_container ul{
     list-style:none;
@@ -18,6 +44,12 @@
 .main_container ul li{
     margin-right: 10%;
 }
+ul{
+    padding:0;
+}
+li{
+    margin:0;
+}
 
 .calendar_contact_group{
     display:flex;
@@ -27,4 +59,36 @@
 
 .calendar_contact_group .widget{
     flex-grow: 1;
+}
+iframe{
+    height:100%;
+    width:100%;;
+}
+
+
+@media only screen and (min-width: 1024px){
+    .main_container{
+        flex-direction: row-reverse;
+    }
+
+    .column{
+        display:flex;
+        flex-direction: column;
+        flex-grow:1;
+        /* justify-content: space-evenly; */
+        margin:auto;
+    }
+    #primary{
+        flex-grow:2;
+    }
+
+    #secondary{
+        margin-left:5%;
+    }
+
+    .calendar_contact_group{
+        height:auto;
+    }
+
+    
 }
