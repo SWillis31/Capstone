@@ -1,7 +1,7 @@
 <?php
 include("header.php");
 $title="Article";
-$extra_stylesheet="";
+$extra_stylesheet="css/main_content.css";
 include("db_connect.php");
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){

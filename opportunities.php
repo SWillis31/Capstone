@@ -1,7 +1,7 @@
 <?php
 include("db_connect.php");
 $title="Opportunities";
-$extra_stylesheet="";
+$extra_stylesheet="css/main_content.css";
 include("header.php");
 
 echo "<div class='opportunity-list'>";

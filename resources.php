@@ -1,7 +1,7 @@
 <?php
 include("header.php");
 $title="Resources";
-$extra_stylesheet="";
+$extra_stylesheet="css/main_content.css";
 include("db_connect.php");
 
 echo "<ul>";

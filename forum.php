@@ -3,7 +3,7 @@
 include("db_connect.php");
 $conn = OpenDB();
 $title="Forum";
-$extra_stylesheet="";
+$extra_stylesheet="css/main_content.css";
 
 include('header.php');
 ?>

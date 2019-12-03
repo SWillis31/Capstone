@@ -1,7 +1,7 @@
 <?php
 include("db_connect.php");
 $title="About";
-$extra_stylesheet="css/about.css";
+$extra_stylesheet="css/main_content.css";
 include("header.php");
 ?>
 

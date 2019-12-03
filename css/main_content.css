@@ -1,0 +1,19 @@
+.main_container h1{
+	font-size: 16pt;
+	text-align: left;
+	text-decoration: underline;
+	background-color: maroon;
+	color: white;
+}
+.main_container h2{
+	font-size: 14pt;
+	text-align: left;
+}
+.main_container h3{
+	font-size: 12pt;
+	text-align: left;
+}
+.main_container p{
+	font-size: 12pt;
+	text-align: left;
+}
