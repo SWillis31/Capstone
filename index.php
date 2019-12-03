@@ -1,6 +1,6 @@
 <?php
 $title = "UALR Computer Science";
-include('header.php');
+
 include('db_connect.php');
 $title="Capstone";
 $extra_stylesheet="css/index.css";
