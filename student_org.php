@@ -9,7 +9,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
 
     $result = $conn->query($sql);
     while($row = $result->fetch_assoc()){
-        echo "<h2>" . $row["org_name"] . "</h2>";
+        echo "<h1>" . $row["org_name"] . "</h1>";
         echo $row["org_description"];
     }
 

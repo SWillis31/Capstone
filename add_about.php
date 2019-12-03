@@ -39,7 +39,6 @@ CKEDITOR.editorConfig = function( config ) {
 CKEDITOR.replace('editor');
 </script>
 
-<p>test</p>
 <?php 
 include('footer.php');
 ?>

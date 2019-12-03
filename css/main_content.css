@@ -1,18 +1,27 @@
 .main_container h1{
-	font-size: 16pt;
-	text-align: left;
-	text-decoration: underline;
+	font-size: 20pt;
+	text-align: center;
 	background-color: maroon;
 	color: white;
 }
 .main_container h2{
-	font-size: 14pt;
+	font-size: 16pt;
 	text-align: left;
+	margin-bottom: 1pt;
 }
 .main_container h3{
+	font-size: 14pt;
+	font-weight:bold;
+	text-align: left;
+	margin-bottom: 1pt;
+}
+
+.main_container h4{
 	font-size: 12pt;
 	text-align: left;
+	margin-bottom: 1pt;
 }
+
 .main_container p{
 	font-size: 12pt;
 	text-align: left;
