@@ -11,9 +11,10 @@ while($row = $result->fetch_assoc()){
     echo $row["content"];
     echo "<br>Posted by: " . $row["posted_by"] . "<br>On " . $row["created"] . "<br>";
     if(isAdmin()){
-        echo " <br><a href='edit_announcement.php?id=" . $row["announcement_id"] . "'>Edit Announcement</a>";
+        echo " <div class='admin_control'><br><a href='edit_announcement.php?id=" . $row["announcement_id"] . "'>Edit Announcement</a>";
         echo "<br><a href='delete_announcement.php?id=" . $row["announcement_id"] . "'>Delete Announcement</a></div>";
     }
+	echo "</div>";
 }
 
 if(isAdmin()){

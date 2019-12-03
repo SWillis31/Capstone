@@ -19,7 +19,7 @@ include("db_connect.php");
         </div>
         <?php
         if($title === "Capstone"){
-            $sql = "SELECT * FROM about_info WHERE id=6";
+            $sql = "SELECT * FROM about_info WHERE id=5";
             $result = $conn->query($sql);
             if($row = $result->fetch_assoc()){
                 echo "<div class='welcome_message'>";

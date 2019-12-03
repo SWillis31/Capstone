@@ -5,6 +5,7 @@
     text-align:center;
     align-self:center;
     flex-basis: content;
+	margin-bottom:3%;
 }
 #secondary{
     margin-top:0;
@@ -97,6 +98,9 @@ iframe{
     .calendar_contact_group{
         flex-direction:column;
     }
+	.calendar_widget{
+		height:fit-content;
+	}
 }
 
 @media only screen and (min-width: 1024px){
@@ -120,8 +124,12 @@ iframe{
     }
 
     .calendar_contact_group{
+		flex-direction:row;
         height:auto;
     }
+	.calendar_widget{
+		height:auto;
+	}
 
     
 }

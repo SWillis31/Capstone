@@ -16,8 +16,11 @@ a:visited{
     color:maroon;
 }
 
-footer{
+.footer{
     align-content: center;
+	position: absolute;
+	bottom:0;
+	margin-top:3%;
 }
 
 .forum_post{
@@ -75,6 +78,10 @@ textarea{
         font-weight:bold;
         font-size:2em;
     }
+	
+	.footer{
+		font-size:0.5em;
+	}
 }
 
 @media only screen and (min-width:1024px){
@@ -88,4 +95,8 @@ textarea{
         font-weight:bold;
         font-size:5em;
     }
+	
+	.footer{
+		font-size:0.75em;
+	}
 }

@@ -1,6 +1,6 @@
 <?php
 $title = "Register";
-$extra_stylesheet = "css/main_content.css";
+$extra_stylesheet = "css/news.css";
 include('header.php');
 
 $conn = OpenDB();
@@ -70,8 +70,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </head>
                 <body>
                     <p>User " . $username . " has requested access to the Easy Web System.</p>
-                    <br><a href='localhost/capstone/add_admin.php?username=" . $username . "'>Approve Access</a><br>
-                    <a href='localhost/capstone/deny_admin.php?username=" . $username . "'>Deny Access</a><br>
+                    <br><a href='18.221.0.4/Tron/add_admin.php?username=" . $username . "'>Approve Access</a><br>
+                    <a href='18.221.0.4/Tron/deny_admin.php?username=" . $username . "'>Deny Access</a><br>
                 </body>
                 </html>
             "; //Links will need to be changed to the final server address
@@ -81,28 +81,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         //Prepare MYSQL insert statement
 
-        if ($_POST["role"] == 'admin') {
-            $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-            $headers .= 'From: Easy-Web@ualr.edu' . "\r\n";
-            $to = 'sxwillis@ualr.edu';
-            $subject = 'Easy Web Admin Access';
-            $message = "
-                <html>
-                    <head>
-                        <title>Admin Access Request</title>
-                    </head>
-                <body>
-                    <p>User " . $username . " has requested access to the Easy Web System.</p>
-                    <br><a href='localhost/capstone/add_admin.php?username=" . $username . "'>Approve Access</a><br>
-                    <a href='localhost/capstone/deny_admin.php?username=" . $username . "'>Deny Access</a><br>
-                </body>
-                </html>
-            "; //Links will need to be changed to the final server address
-
-            mail($to, $subject, $message, $headers);
-        }
-
-        //Prepare MYSQL insert statement
         
         $sql = "INSERT INTO users (username, password, role) VALUES (?, ?, ?)";
 

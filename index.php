@@ -2,7 +2,7 @@
 $title = "UALR Computer Science";
 
 //include('db_connect.php');
-$title="Capstone";
+//$title="Capstone";
 $extra_stylesheet="css/index.css";
 include('header.php');
 ?>
@@ -52,7 +52,7 @@ echo "</div>";
 
 echo "<div class='about_widget widget'>";
 echo "<h2>About</h2>";
-$sql = "SELECT * FROM about_info WHERE id != 6";
+$sql = "SELECT * FROM about_info WHERE id != 5";
 $result = $conn->query($sql);
 echo "<ul>";
 while($row = $result->fetch_assoc()){
@@ -174,7 +174,7 @@ while ($row = $result->fetch_assoc()) {
         echo "<br><a href='delete_article.php?id=" . $row["post_id"] . "'>Delete Article</a></div>";
     }
 }
-echo "</div>";
+echo "</div></div>";
 if (isAdmin()) {
     echo "<div class='admin_control'>";
     echo "<br><a href='add_article.php'>Add Article</a> ";
@@ -246,4 +246,6 @@ if(isAdmin()){
     echo "<a href='view_users.php'>View Users</a>";
     echo "</div>";
 }
+
+include("footer.php");
 ?>

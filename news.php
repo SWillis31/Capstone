@@ -7,7 +7,7 @@ include("header.php");
 echo "<h1 class='page_heading'>Department News</h1>";
 echo "<div class='wrapper'>";
 echo "<div class='news-articles'>";
-$sql = "SELECT * FROM articles ORDER BY created DESC";
+$sql = "SELECT * FROM articles WHERE post_id != 13 ORDER BY created DESC";
 $result = $conn->query($sql);
 while($row = $result->fetch_assoc()){
     echo "<div class='news_article'><h3><a href='article.php?id=" . $row["post_id"] . "'>" . $row["title"] . "</a></h3><br>Posted by: " . $row["poster"] . "<br>On " . $row["created"] . "<br>";
