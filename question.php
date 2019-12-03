@@ -33,7 +33,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <input type='text' name='email' id='email' value='example@email.com' required><br>
 
     <label for='question'>Enter your question here:</label><br>
-    <textarea name='question' id='question' required>Question...</textarea>
+    <textarea rows="30" cols="100" name='question' id='question' required>Question...</textarea>
     <input type='submit' name='submit' value='submit'>
 </form>
 

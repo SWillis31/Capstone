@@ -18,7 +18,7 @@ include("db_connect.php");
             <p class='banner_text'>Computer Science</p>
         </div>
         <?php
-        if($title === "Capstone"){
+        if($title === "UALR Computer Science"){
             $sql = "SELECT * FROM about_info WHERE id=5";
             $result = $conn->query($sql);
             if($row = $result->fetch_assoc()){
