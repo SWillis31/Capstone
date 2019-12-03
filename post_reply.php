@@ -24,8 +24,13 @@ if (isset($_SESSION["role"])){
             $statement->close();
         }
     }
+	header("location: forum_thread.php?id=" . $_POST["thread_id"]);
 }
-header("location: forum_thread.php?id=" . $_POST["thread_id"]);
+else{
+	echo "<p> Please sign in as User/Admin</p>";
+	echo "<a href='login.php'>Log in here</a>";
+}
+
 
 
 ?>
