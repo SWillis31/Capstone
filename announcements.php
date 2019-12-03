@@ -19,7 +19,7 @@ while($row = $result->fetch_assoc()){
 
 if(isAdmin()){
     echo "<div class='admin_control'>";
-    echo "<br><a href='create_announcement.php'>Add Article</a> ";
+    echo "<br><a href='create_announcement.php'>Create New Announcement</a> ";
     echo "</div>";
 }
 echo "</div>";

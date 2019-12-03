@@ -123,7 +123,7 @@ while($row = $result->fetch_assoc()){
 }
 if(isAdmin()){
     
-    echo "<div class='admin_control'><a href='#' onclick='openForm(\"add_resource_form\")'>Add Resource</a>";
+    echo "<div class='admin_control'><a href='#here' onclick='openForm(\"add_resource_form\")'>Add Resource</a>";
     echo "<div id='resource_form'>
             <form action='add_resource.php' method='POST' id='add_resource_form' style='display:none;'>
                 <label for='resource_name'><b>Name</b></label>
@@ -133,7 +133,7 @@ if(isAdmin()){
                 <input type='text' placeholder='https://www.resource.com' name='resource_link' required><br> 
                 
                 <button type='submit' class='submit_button'>Add</button>
-                <a href='#' class='cancel_button' onclick='closeForm(\"add_resource_form\")'>Cancel</a>
+                <a href='#here' class='cancel_button' onclick='closeForm(\"add_resource_form\")'>Cancel</a>
             </form>
         </div></div>
     ";
